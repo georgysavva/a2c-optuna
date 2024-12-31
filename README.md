@@ -6,23 +6,33 @@ The performance of online reinforcement algorithms such as A2C is very sensitive
 
 1. Create the conda environment
 
-`conda env create -f environment.yml --name a2c-optuna`
+```
+conda env create -f environment.yml --name a2c-optuna
+```
 
 2. Activate the conda environment:
 
- `conda activate a2c-optuna`
+ ```
+ conda activate a2c-optuna
+```
 
 3. Install python dependencies
 
-`pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+```
 
 4. Install the root package
 
-`pip install -e .`
+```
+pip install -e .
+```
 
 5. Login to wandb
 
-`wandb login`
+```
+wandb login
+```
 
 6. Spin up a MySQL instance. Optuna requires it to manage studies and trials. The simplest way to do it is through a free, managed cloud service like [Aiven](https://aiven.io/free-mysql-database)
 
@@ -30,8 +40,19 @@ The performance of online reinforcement algorithms such as A2C is very sensitive
 
 1. Create an Optuna study
 
-`python a2c_optuna/scripts/create_study.py --study_storage {mysql_connection_url} --env_name Ant-v4 --study {study_name}`
+```
+python a2c_optuna/scripts/create_study.py --study_storage {mysql_connection_url} --env_name Ant-v4 --study {study_name}
+```
 
 2. Launch Optuna-managed training
 
-`python a2c_optuna/scripts/run.py --wandb_project {wandb_project} --study_name Ant-v4-{study_name} --study_storage {mysql_connection_url}`
+```
+python a2c_optuna/scripts/run.py --wandb_project {wandb_project} --study_name Ant-v4-{study_name} --study_storage {mysql_connection_url}
+```
+
+## Troubleshooting
+
+If you encounter errors related to GLFW, try setting this:
+```
+export MUJOCO_GL=egl
+```
