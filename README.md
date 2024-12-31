@@ -41,13 +41,13 @@ wandb login
 1. Create an Optuna study
 
 ```
-python a2c_optuna/scripts/create_study.py --study_storage {mysql_connection_url} --env_name Ant-v4 --study {study_name}
+python a2c_optuna/scripts/create_study.py --study_storage {mysql_connection_url} --env_name HalfCheetah-v4 --study {study_name}
 ```
 
 2. Launch Optuna-managed training
 
 ```
-python a2c_optuna/scripts/run.py --wandb_project {wandb_project} --study_name Ant-v4-{study_name} --study_storage {mysql_connection_url}
+python a2c_optuna/scripts/run.py --wandb_project {wandb_project} --study_name HalfCheetah-v4-{study_name} --study_storage {mysql_connection_url}
 ```
 
 ## Troubleshooting
