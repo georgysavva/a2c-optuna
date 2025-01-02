@@ -1,6 +1,6 @@
 # Advantage Actor-Critic with Optuna
 
-The performance of online reinforcement algorithms such as A2C is very sensitive to hyperparameters. This project utilizes [Optuna](https://optuna.org/), a hyperparameter search framework, to train the best-performing policy to solve the Gym Mujoco environments. 
+This project utilizes [Optuna](https://optuna.org/) to train an A2C policy to solve the [HalfCheetah](https://www.gymlibrary.dev/environments/mujoco/half_cheetah/) MuJoCo Gym environment. 
 
 ## Local Setup
 
